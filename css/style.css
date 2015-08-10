@@ -15,13 +15,14 @@ body, html {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  background: pink;
+  background: none;
 }
 
 .question-wrapper {
   display: block;  
   width: 80%;
-  background: orange;
+  max-width: 1440px;
+  background: none;
 
 }
 
@@ -39,7 +40,7 @@ ul {
   margin: 0 auto;
   text-align: center;
   list-style: none;
-  background: red;
+  background: none;
 }
 
 li {
