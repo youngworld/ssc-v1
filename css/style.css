@@ -1,7 +1,6 @@
 
 body, html {
-  width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 
@@ -33,6 +32,7 @@ body, html {
   font-size: 5em;
 }
 
+
 ul {
   display: block;
   width: 80%;
@@ -46,54 +46,20 @@ li {
   display: inline-block;
   font-size: 2em;
   padding: 40px;
-
-
-
-
 }
 
 
 
-/*
-body, html {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;  
-  justify-content: center;
-  background: #ccc;
- 
-}
-
-
-
-.text-wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;  
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 100%;
+.story-wrapper {
+  display: block;
+  background: none;
+  width: 70%;
   max-width: 1200px;
-  padding-bottom: 100px;
-
+  margin: 0 auto;
+  padding-bottom: 200px;
 }
 
-
-.wrapper h1 {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 5.5em;
-  color: black;
-  margin-top: 30%;
-
-}
-
-.wrapper h2 {
+.story-wrapper h2 {
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 4em;
@@ -110,27 +76,9 @@ article p {
   font-size: 1.5em;
   line-height: 1.5em;
   color: #aaa;
-
 }
 
-ul {
-  display: block;
-  width: 90%;
-  text-align: center;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  background: none;
 
-
-}
-
-li {
-  display: inline-block;
-  font-family: Arial;
-  font-size: 2em;
-  padding: 20px 40px;
-}
 
 
 .video-wrapper {
@@ -145,6 +93,7 @@ li {
   align-items: center;
   height: 100vh;
 
+
 }
 
 
@@ -154,6 +103,7 @@ li {
   justify-content: center;
   align-items: center;
   width: 800px;
+  min-width: 450px;
   height: 450px;
   margin-left: 10px;
   margin-top: auto;
@@ -168,12 +118,26 @@ li {
   justify-content: center;
   align-items: center;
   width: 100px;
+  min-width: 60px;
   height: 450px;
   margin-left: 10px;
   margin-top: auto;
   margin-bottom: auto;
   background: cyan;
 }
+
+
+a.close-video {
+  display: block;
+  position: absolute;
+  font-size: 1.5em;
+  top: 50px;
+  right: 50px;
+
+
+
+}
+
 
 a #video1:link {
   transition: width .7s ease;
