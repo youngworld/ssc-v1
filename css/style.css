@@ -1,18 +1,74 @@
 
 body, html {
+  width: 100%;
+  height: 100%;
+}
+
+
+.container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  width: 100%;
+  height: 100%;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+}
+
+.question-wrapper {
+  display: block;  
+  width: 80%;
+  background: orange;
+
+}
+
+.question-wrapper h1 {
+  display: block;
+  width: auto;
+  text-align: center;
+  font-size: 5em;
+}
+
+ul {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+  background: red;
+}
+
+li {
+  display: inline-block;
+  font-size: 2em;
+  padding: 40px;
+
+
+
+
+}
+
+
+
+/*
+body, html {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;  
   justify-content: center;
- 
+  background: #ccc;
  
 }
 
 
 
-.wrapper {
+.text-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -20,7 +76,7 @@ body, html {
   display: flex;  
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
   padding-bottom: 100px;
@@ -167,5 +223,5 @@ a #video2:visited {
 }
 
 
-
+*/
 
