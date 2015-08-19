@@ -18,7 +18,7 @@ body, html {
   background: none;
 }
 
-.question-wrapper {
+#question-wrapper {
   display: block;  
   width: 80%;
   max-width: 1440px;
@@ -26,7 +26,7 @@ body, html {
 
 }
 
-.question-wrapper h1 {
+#question-wrapper h1 {
   display: block;
   width: auto;
   text-align: center;
@@ -49,7 +49,11 @@ li {
   padding: 40px;
 }
 
-
+a.anchor {
+  display: block;
+  position: relative;
+  top: -400px;
+}
 
 .story-wrapper {
   display: block;
@@ -68,6 +72,7 @@ li {
   margin-top: 40%;
   margin-bottom: 10%;
   background: none;
+  display: block;
 }
 
 article p {
@@ -80,7 +85,18 @@ article p {
 }
 
 
-
+.next-chapter {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  background: yellow;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  float: right;
+  margin: 200px;
+  cursor: pointer;
+}
 
 .video-wrapper {
   display: -webkit-box;
