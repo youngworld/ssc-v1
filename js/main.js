@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-// Hide all chapters at first //
-
-$('#chapterA').hide();
-$('#chapterB').hide();
-$('#chapterC').hide();
-$('#chapterD').hide();
-
 
 // Declare variables to associate styled text chapters //
 
@@ -23,56 +16,29 @@ var next ='<div class="next">Next</div>'
 var storyLeft = [chapterA, chapterB, chapterC, chapterD];
 
 
-// Start story with user choice of first chapter //
+// CHOOSE FIRST CHAPTER //
+
+// Start A //
 
 $('#choiceA').click(function() {
   $('.choices').hide();
   storyLeft.splice(0, 1);
-  window.location.hash = "A";
   $('.story-wrapper').append(chapterA, next);
   console.log(storyLeft, storyLeft.length);
 });
 
 
+// Start B //
 
 $('#choiceB').click(function() {
   $('.choices').hide();
   storyLeft.splice(1, 1);
   $('.story-wrapper').append(chapterB, next);
   console.log(storyLeft, storyLeft.length);
-  
-
-$('.next').click(function() {
-  var randomChapter = storyLeft[Math.floor(Math.random() * storyLeft.length)];
-  var randomChapterNum = storyLeft.indexOf(randomChapter);
-  storyLeft.splice(randomChapterNum, 1);
-  $('.story-wrapper').append(randomChapter, next);
-  console.log(storyLeft, storyLeft.length);
-  console.log(randomChapterNum);
-
-
-$('.next').click(function() {
-  var randomChapter = storyLeft[Math.floor(Math.random() * storyLeft.length)];
-  var randomChapterNum = storyLeft.indexOf(randomChapter);
-  storyLeft.splice(randomChapterNum, 1);
-  $('.story-wrapper').append(randomChapter, next);
-  console.log(storyLeft, storyLeft.length);
-  console.log(randomChapterNum);
-
-
-$('.next').click(function() {
-  var randomChapter = storyLeft[Math.floor(Math.random() * storyLeft.length)];
-  var randomChapterNum = storyLeft.indexOf(randomChapter);
-  storyLeft.splice(randomChapterNum, 1);
-  $('.story-wrapper').append(randomChapter);
-  console.log(storyLeft, storyLeft.length);
-  console.log(randomChapterNum);
-
-});
-});
-});
 });
 
+
+// Start C //
 
 $('#choiceC').click(function() {
   $('.choices').hide();
@@ -81,6 +47,7 @@ $('#choiceC').click(function() {
   console.log(storyLeft.length);
 });
 
+// Start D // 
 
 $('#choiceD').click(function() {
   $('.choices').hide();
@@ -91,35 +58,28 @@ $('#choiceD').click(function() {
 
 
 
-// Randomly trigger remaining chapters one-by-one //
+// RANDOM REMAINING CHAPTERS //
 
 
-$('.next-chapter').click(function() {
+$('body').on('click', '.next', function() {
 
-    console.log('Hello');
+    var randomChapter = storyLeft[Math.floor(Math.random()*storyLeft.length)];
+    var randomChapterNum = storyLeft.indexOf(randomChapter);
+    storyLeft.splice (randomChapterNum, 1);
+    $('.story-wrapper').append(randomChapter, next);
 
+    console.log(storyLeft, storyLeft.length);
+    console.log(randomChapterNum);
 
-    // var randomChapter = storyLeft[Math.floor(Math.random()*storyLeft.length)];
-    // var randomChapterNum = storyleft.indexOf('randomChapter');
-    // storyLeft.splice (randomChapterNum, 1);
-    // $('.story-container').append(randomChapter);
-    // console.log(storyLeft, storyLeft.length);
-    // console.log(randomChapterNum);
-  });
-
-
+ });
 
 
 
-
-
-
-// Animate video arrangement //
+// ANIMATE VIDEO ARRANGEMENTS //
 
 $('.video').click(function() {
   $('.active').removeClass('active');
   $(this).addClass('active');
-
 
   });
 
