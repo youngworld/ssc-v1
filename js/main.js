@@ -73,9 +73,9 @@ $('#choiceD').click(function() {
   videos.push(videoD);
   storyLeft.splice(3, 1);
   $('.story-wrapper').append(chapterD, next, VA1);
-  $('.video-wrapper div.active').append(videoB)
+  $('.video-wrapper div.active').append(videoD)
 
-  console.log(storyLeft.length);
+
 });
 
 
@@ -89,9 +89,7 @@ $('body').on('click', '.next', function() {
 
     var randomChapter = storyLeft[Math.floor(Math.random()*storyLeft.length)];
     var randomChapterNum = storyLeft.indexOf(randomChapter);  
-    
-
-console.log(randomChapter);
+  
 
     switch (randomChapter) {
       
@@ -118,53 +116,49 @@ console.log(randomChapter);
     }
 
 
+        if (storyLeft.length === 3) {
+          $('.story-wrapper').append(randomChapter, next, VA2);  
+          storyLeft.splice (randomChapterNum, 1);
+          attachvideo ();  
 
-         
-          if (storyLeft.length === 3) {
-            $('.story-wrapper').append(randomChapter, next, VA2);  
-            storyLeft.splice (randomChapterNum, 1);
-            attachvideo ();  
+          $('.video').click(function() {
+          $('.active').removeClass('active');
+          $(this).addClass('active');
 
-            $('.video').click(function() {
-            $('.active').removeClass('active');
-            $(this).addClass('active');
-
-            });
+          });
 
 
+        } else if (storyLeft.length === 2) {
+          $('.story-wrapper').append(randomChapter, next, VA3);
+          storyLeft.splice (randomChapterNum, 1);
+          attachvideo (); 
+           
+          $('.video').click(function() {
+          $('.active').removeClass('active');
+          $(this).addClass('active');
+          });
+       
 
-          } else if (storyLeft.length === 2) {
-            $('.story-wrapper').append(randomChapter, next, VA3);
-            storyLeft.splice (randomChapterNum, 1);
-            attachvideo (); 
-             
-            $('.video').click(function() {
-            $('.active').removeClass('active');
-            $(this).addClass('active');
-            });
-         
 
+        } else  {
+          $('.story-wrapper').append(randomChapter, VA4);
+          storyLeft.splice (randomChapterNum, 1);
+          attachvideo (); 
 
-          } else  {
-            $('.story-wrapper').append(randomChapter, VA4);
-            storyLeft.splice (randomChapterNum, 1);
-            attachvideo (); 
+          $('.video').click(function() {
+          $('.active').removeClass('active');
+          $(this).addClass('active');
+          });
 
-            $('.video').click(function() {
-            $('.active').removeClass('active');
-            $(this).addClass('active');
-            });
-
-          }
+        }
       
 });
 
     function attachvideo () {
-            $('.video-wrapper:last div').each(function(i){
-              console.log(videos[i]);
-              $(this).append(videos[i]);
-            });
-
-          }
+      $('.video-wrapper:last div').each(function(i){
+      console.log(videos[i]);
+      $(this).append(videos[i]);
+      });
+    }
 
 });
