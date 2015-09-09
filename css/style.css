@@ -61,7 +61,7 @@ a.anchor {
   width: 70%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
 .story-wrapper h2 {
@@ -69,8 +69,8 @@ a.anchor {
   font-family: Arial, sans-serif;
   font-size: 3.5em;
   color: black;
-  margin-top: 40%;
-  margin-bottom: 10%;
+  margin-top: 15%;
+  margin-bottom: 15%;
   background: none;
   display: block;
   clear: both;
@@ -88,13 +88,15 @@ article p {
 
 .next {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   position: relative;
-  top: 50px;
-  background: yellow;
-  float: right;
-  clear: both;
+  background: #ddd;
+  color: white;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-radius: 50px 50px 0px 0px;
+
   text-align: center;
   cursor: pointer;
 }
@@ -109,8 +111,30 @@ article p {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100%;
+  max-width: 1920px;
+  height: 600px;
+  padding-top: 50px;
 
+}
+
+
+.video {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+ /* min-width: 60px;*/
+  height: 450px;
+  margin-left: 10px;
+  background: yellow;
+  cursor: pointer;
+  transition: width .7s;
+  overflow: hidden;
 }
 
 
@@ -126,32 +150,10 @@ article p {
   /*min-width: 450px;*/
   height: 450px;
   margin-left: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
   transition: width .7s;
+  
 }
 
-
-
-
-.video {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
- /* min-width: 60px;*/
-  height: 450px;
-  margin-left: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: yellow;
-  cursor: pointer;
-  transition: width .7s;
-}
 
 
 
@@ -165,50 +167,4 @@ a.close-video {
 }
 
 
-/*a #video1:link {
-  transition: width .7s ease;
-  transition: opacity .7s ease;
-  width: 800px;
-  opacity: .4;
-}
-
-a #video1:hover {
-  transition: opacity 0.7s ease;
-  opacity: .4;
-
-}
-
-
-a #video1:visited {
-  transition: opacity 0.7s ease;
-  transition: width .7s ease;
-  width: 100px;
-  opacity: .4;
-}
-
-
-
-
-
-
-a #video2:link {
-  transition: width .7s ease;
-  transition: opacity .7s ease;
-  width: 100px;
-  opacity: .4;
-}
-
-
-a #video2:hover {
-  transition: opacity 0.7s ease;
-  opacity: .4;
-}
-
-
-a #video2:visited {
- transition: opacity 0.7s ease;
-  transition: width .7s ease;
-  width: 800px;
-  opacity: .4;
-}*/
 

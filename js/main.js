@@ -13,13 +13,12 @@ var VA2 = '<div class="video-wrapper"><div class="video"></div><div class="video
 var VA3 = '<div class="video-wrapper"><div class="video"></div><div class="video"></div><div class="video active"></div></div>'
 var VA4 = '<div class="video-wrapper"><div class="video"></div><div class="video"></div><div class="video"></div><div class="video active"></div></div>'
 
+var next = '<div class="next">V</div>'
 
-var next = '<div class="next">OK</div>'
-
-var videoA = '<video width="800" autoplay loop><source src="videos/videoA.mp4" type="video/mp4"/></video>' 
-var videoB = '<video width="800" autoplay loop><source src="videos/videoB.mp4" type="video/mp4"/></video>'
-var videoC = '<video width="800" autoplay loop><source src="videos/videoC.mp4" type="video/mp4"/></video>' 
-var videoD = '<video width="800" autoplay loop><source src="videos/videoD.mp4" type="video/mp4"/></video>' 
+var videoA = '<video width=800 autoplay loop><source src="videos/videoA.mp4" type="video/mp4"/></video>' 
+var videoB = '<video width=800 autoplay loop><source src="videos/videoB.mp4" type="video/mp4"/></video>'
+var videoC = '<video width=800 autoplay loop><source src="videos/videoC.mp4" type="video/mp4"/></video>' 
+var videoD = '<video width=800 autoplay loop><source src="videos/videoD.mp4" type="video/mp4"/></video>' 
 
 
 
@@ -30,8 +29,9 @@ var videos = [];
 
 
 
-
 // CHOOSE FIRST CHAPTER //
+
+$('.next').hide();
 
 // Start A //
 
@@ -39,8 +39,9 @@ $('#choiceA').click(function() {
   $('.choices').hide();
   storyLeft.splice(0, 1);
   videos.push(videoA);
-  $('.story-wrapper').append(chapterA, next, VA1);
-  $('.video-wrapper div.active').append(videoA)
+  $('.story-wrapper').append(chapterA, VA1);
+  $('.video-wrapper div.active').append(videoA);
+  $('.next').show();
 });
 
 
@@ -50,8 +51,9 @@ $('#choiceB').click(function() {
   $('.choices').hide();
   videos.push(videoB);
   storyLeft.splice(1, 1);
-  $('.story-wrapper').append(chapterB, next, VA1);
-  $('.video-wrapper div.active').append(videoB)
+  $('.story-wrapper').append(chapterB, VA1);
+  $('.video-wrapper div.active').append(videoB);
+  $('.next').show();
 });
 
 
@@ -61,8 +63,9 @@ $('#choiceC').click(function() {
   $('.choices').hide();
   videos.push(videoC);
   storyLeft.splice(2, 1);
-  $('.story-wrapper').append(chapterC, next, VA1);
-  $('.video-wrapper div.active').append(videoC)
+  $('.story-wrapper').append(chapterC, VA1);
+  $('.video-wrapper div.active').append(videoC);
+  $('.next').show();
 
 });
 
@@ -72,9 +75,9 @@ $('#choiceD').click(function() {
   $('.choices').hide();
   videos.push(videoD);
   storyLeft.splice(3, 1);
-  $('.story-wrapper').append(chapterD, next, VA1);
-  $('.video-wrapper div.active').append(videoD)
-
+  $('.story-wrapper').append(chapterD, VA1);
+  $('.video-wrapper div.active').append(videoD);
+  $('.next').show();
 
 });
 
@@ -85,80 +88,81 @@ $('#choiceD').click(function() {
 
 
 
-$('body').on('click', '.next', function() {
+  $('body').on('click', '.next', function() {
 
     var randomChapter = storyLeft[Math.floor(Math.random()*storyLeft.length)];
     var randomChapterNum = storyLeft.indexOf(randomChapter);  
-  
+    
 
-    switch (randomChapter) {
+      switch (randomChapter) {
       
+        case chapterA:
+          console.log("chapterA")
+          videos.push(videoA);
+          break;
 
-      case chapterA:
-        console.log("chapterA")
-        videos.push(videoA);
-        break;
+        case chapterB:
+         console.log("chapterB")
+          videos.push(videoB);
+          break;
 
-      case chapterB:
-       console.log("chapterA")
-        videos.push(videoB);
-        break;
+        case chapterC:
+         console.log("chapterC")
+          videos.push(videoC);
+          break;
 
-      case chapterC:
-       console.log("chapterA")
-        videos.push(videoC);
-        break;
+        case chapterD:
+         console.log("chapterD")
+          videos.push(videoD);
+          break;
+      }
 
-      case chapterD:
-       console.log("chapterA")
-        videos.push(videoD);
-        break;
-    }
+         
+          if (storyLeft.length === 3) {
+            $('.story-wrapper').append(randomChapter, VA2);  
+            storyLeft.splice (randomChapterNum, 1);
+            attachvideo (); 
 
-
-        if (storyLeft.length === 3) {
-          $('.story-wrapper').append(randomChapter, next, VA2);  
-          storyLeft.splice (randomChapterNum, 1);
-          attachvideo ();  
-
-          $('.video').click(function() {
-          $('.active').removeClass('active');
-          $(this).addClass('active');
-
-          });
+            $('.video').click(function() {
+            $('.active').removeClass('active');
+            $(this).addClass('active');
+            });
 
 
-        } else if (storyLeft.length === 2) {
-          $('.story-wrapper').append(randomChapter, next, VA3);
-          storyLeft.splice (randomChapterNum, 1);
-          attachvideo (); 
-           
-          $('.video').click(function() {
-          $('.active').removeClass('active');
-          $(this).addClass('active');
-          });
-       
+          } else if (storyLeft.length === 2) {
+            $('.story-wrapper').append(randomChapter, VA3);
+            storyLeft.splice (randomChapterNum, 1);
+            attachvideo (); 
+             
+            $('.video').click(function() {
+            $('.active').removeClass('active');
+            $(this).addClass('active');
+            });
+         
 
+          } else  {
+            $('.story-wrapper').append(randomChapter, VA4);
+            $('.next').hide();
+            storyLeft.splice (randomChapterNum, 1);
+            attachvideo (); 
 
-        } else  {
-          $('.story-wrapper').append(randomChapter, VA4);
-          storyLeft.splice (randomChapterNum, 1);
-          attachvideo (); 
+            $('.video').click(function() {
+            $('.active').removeClass('active');
+            $(this).addClass('active');
+            });
 
-          $('.video').click(function() {
-          $('.active').removeClass('active');
-          $(this).addClass('active');
-          });
-
-        }
+          }
       
-});
+  });
 
-    function attachvideo () {
-      $('.video-wrapper:last div').each(function(i){
-      console.log(videos[i]);
-      $(this).append(videos[i]);
-      });
-    }
+  function attachvideo () {
+    $('.video-wrapper:last div').each(function(i) {
+    console.log(videos[i]);
+    $(this).append(videos[i]);
+
+
+    });
+  }
+
 
 });
